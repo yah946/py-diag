@@ -22,10 +22,13 @@ def main():
     ]
     for student in students:
         mean = calc_mean(student['notes'])
-        student['mean'] = mean
-        print(f'{student['nom']} {mean} {appreciation(mean)}')
-    students_sorted = sorted(students,key = lambda d: d[mean])
-    print (students_sorted)
+        student['mean'] = round(mean,2)
+        print(f'{student['nom']} {mean:.2f} {appreciation(mean)}')
+    # students_sorted = sorted(students,key = lambda d: d[mean])
+    best_student = max(students,key=lambda student: student['mean'])
+    less_good = min(students,key=lambda student: student['mean'])
+    print(f"The Best Student is: {best_student['nom']}")
+    print(f"The Less Good Student is: {less_good['nom']}")
 
 
 main()
