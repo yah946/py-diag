@@ -17,11 +17,21 @@ students = [
     {"nom": "Sara", "notes": [18, 17, 16]},
     {"nom": "Lina", "notes": [6, 8, 5]},
 ]
-stds = {}
+resultats = {}
 for student in students:
     mean = calc_mean(student['notes'])
-    stds[student['nom']] = {
-        'moyenne': mean,
+    resultats[student['nom']] = {
+        'moyenne': round(mean,2),
         'mention':appreciation(mean)
     }
 
+sorted_students = sorted(resultats.items(),key=lambda student:student[1]['moyenne'],reverse=True)
+print(resultats)
+
+for i,student in enumerate(sorted_students):
+    print(f'{i+1}. {student[0]} - {student[1]['moyenne']}')
+
+def students_expected_to_fail(students):
+    return [(student[0],student[1]['moyenne']) for student in students.items() if student[1]['moyenne'] < 10]
+
+print('students expected to fail',students_expected_to_fail(resultats))
