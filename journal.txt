@@ -1,0 +1,5 @@
+[OK] Retrait effectue: 5 pommes, reste(20)
+[ERROR] Stock insuffisant pour "bananes" (demande: 10, disponible: 4)
+[ERROR]kiwis: product not exist
+[ERROR]oranges: entred quantity is invalid ("abc")
+[OK] Retrait effectue: 5 oranges, reste(15)

@@ -14,18 +14,17 @@ def add_article(path, article):
     file.write(article+'\n')
     file.close()
 def read_file(path):
-    file = open(path,'r',encoding='utf-8')
-    return file.readlines()
+    with open(path,'r',encoding='utf-8') as file:
+        return file.readlines()
 def count_lines(path):
     return len(read_file(path))
 
 def main():
     articles = ["apples", "milk", "bread"]
-    modes_a_identifier = ["r", "w", "a", "x", "rb", "r+"]
-    # write_shopping_list("courses.txt", articles)
-    # add_article("courses.txt", "eggs")
-    # print(read_file("courses.txt"))
-    # print(count_lines("courses.txt"))
-    
+    write_shopping_list("courses.txt", articles)
+    add_article("courses.txt", "eggs")
+    print(read_file("courses.txt"))
+    print(count_lines("courses.txt"))
+
 
 main()
