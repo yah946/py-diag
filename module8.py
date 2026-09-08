@@ -10,6 +10,8 @@ def division_securisee(a, b):
         result = a/b
     except ZeroDivisionError:
         print('Erreur : division par zero impossible.')
+    except TypeError:
+        print("String Entred")
     return result
 def convertir_entier(valeur):
     result = None
@@ -46,6 +48,7 @@ def main():
 
     print(division_securisee(10, 2))
     print(division_securisee(10, 0))
+    print(division_securisee("i", 0))
 
     print(convertir_entier("42"))
     print(convertir_entier("abc"))
